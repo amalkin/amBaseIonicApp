@@ -9,6 +9,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name="com.attendease.ibeacons.AttendeaseBeaconConsumer" />
     </application>
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 </manifest>
