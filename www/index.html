@@ -25,6 +25,7 @@
 	
 	<script src="js/page.js"></script>
 
+	<script src="js/beacon.js"></script>
 	<script src="js/currentLocation.js"></script>
 	<script src="js/camera.js"></script>
 	<script src="js/captureAudio.js"></script>
@@ -102,7 +103,8 @@
 <script id="beacon.html" type="text/ng-template">
 	<ion-view title="'Beacon'">
 		<ion-content has-header="true" padding="true"> 
-			<button class="button button-block button-energized" onclick="captureBeacon();">Find Beacon</button>  
+			<button class="button button-block button-energized" onclick="captureBeacon();">Find Beacon</button>
+			<p id="beaconProperties"></p>
 		</ion-content>
 	</ion-view>
 </script>
@@ -131,73 +133,74 @@
 	</ion-view>
 </script>
 	
-	<script id="capture.html" type="text/ng-template">
-      <ion-view title="'Capture'">
-        <ion-content has-header="true" padding="true"> 
-		<button class="button button-block button-energized" onclick="captureAudio();">Capture Audio</button>
-		<button class="button button-block button-energized" onclick="captureImage();">Capture Image</button>
-		<button class="button button-block button-energized" onclick="captureVideo();">Capture Video</button>
-		  <p id="capture-result"></p>        
-		  <p id="format-data"></p>		 
-        </ion-content>	
-      </ion-view>
-    </script>
+<script id="capture.html" type="text/ng-template">
+	<ion-view title="'Capture'">
+		<ion-content has-header="true" padding="true"> 
+			<button class="button button-block button-energized" onclick="captureAudio();">Capture Audio</button>
+			<button class="button button-block button-energized" onclick="captureImage();">Capture Image</button>
+			<button class="button button-block button-energized" onclick="captureVideo();">Capture Video</button>
+			<p id="capture-result"></p>        
+			<p id="format-data"></p>		 
+		</ion-content>	
+	</ion-view>
+</script>
 	
-	<script id="compass.html" type="text/ng-template">
-      <ion-view title="'Compass'">
-        <ion-content has-header="true" padding="true"> 
-		  <div class="list">
-			  <label class="item item-input item-stacked-label">
-			  <button class="button button-block button-energized" onclick="helah();">Start Compass</button>
-				<br />
-				<p id="heading"></p>
-				<button class="button button-block button-energized" id="getCompass" onclick="stophelah();">Stop Compass</button>
-			 </label>
-			</div>        
-        </ion-content>
-      </ion-view>
-    </script>
-	<script id="connection.html" type="text/ng-template">
-      <ion-view title="'Connection'">
-        <ion-content has-header="true" padding="true"> 
-		  <div class="list">
-			  <label class="item item-input item-stacked-label">
-			  <button class="button button-block button-energized" onclick="checkConnection();">Get Connection</button>
-				<br />
-				<p id="getConnection"></p>				
-			 </label>
-			</div>        
-        </ion-content>
-      </ion-view>
-    </script>
+<script id="compass.html" type="text/ng-template">
+<ion-view title="'Compass'">
+<ion-content has-header="true" padding="true"> 
+<div class="list">
+<label class="item item-input item-stacked-label">
+<button class="button button-block button-energized" onclick="helah();">Start Compass</button>
+<br />
+<p id="heading"></p>
+<button class="button button-block button-energized" id="getCompass" onclick="stophelah();">Stop Compass</button>
+</label>
+</div>        
+</ion-content>
+</ion-view>
+</script>
+
+<script id="connection.html" type="text/ng-template">
+<ion-view title="'Connection'">
+<ion-content has-header="true" padding="true"> 
+<div class="list">
+<label class="item item-input item-stacked-label">
+<button class="button button-block button-energized" onclick="checkConnection();">Get Connection</button>
+<br />
+<p id="getConnection"></p>				
+</label>
+</div>        
+</ion-content>
+</ion-view>
+</script>
 	
-	<script id="contacts.html" type="text/ng-template">
-      <ion-view title="'Contacts'">
-        <ion-content has-header="true" padding="true"> 
-		  <div class="list">
-			  <p>This will create 1 entry into your device's contact</p>
-			  <label class="item item-input item-stacked-label">
-				<span class="input-label">First Name</span>
-				<input type="text" id="fname">
-			  </label>			  
-			  <button class="button button-block button-energized" onclick="createcontact();">Create</button>
-			  <button class="button button-block button-energized" onclick="findcontacts();">Find</button>
-		</div>  	
-		<p id="findcontact"></p>
-        </ion-content>
-      </ion-view>
-    </script>
+<script id="contacts.html" type="text/ng-template">
+<ion-view title="'Contacts'">
+<ion-content has-header="true" padding="true"> 
+<div class="list">
+<p>This will create 1 entry into your device's contact</p>
+<label class="item item-input item-stacked-label">
+<span class="input-label">First Name</span>
+<input type="text" id="fname">
+</label>			  
+<button class="button button-block button-energized" onclick="createcontact();">Create</button>
+<button class="button button-block button-energized" onclick="findcontacts();">Find</button>
+</div>  	
+<p id="findcontact"></p>
+</ion-content>
+</ion-view>
+</script>
 	
-	<script id="device.html" type="text/ng-template">
-      <ion-view title="'Device Properties'">
-        <ion-content has-header="true" padding="true"> 
-		  <div class="list">			  
-			  <button class="button button-block button-energized" onclick="infoDevice()">Read Device Properties</button>
-			  <p id="deviceProperties"></p>
-		</div>  			
-        </ion-content>
-      </ion-view>
-    </script>
+<script id="device.html" type="text/ng-template">
+	<ion-view title="'Device Properties'">
+		<ion-content has-header="true" padding="true"> 
+			<div class="list">			  
+				<button class="button button-block button-energized" onclick="infoDevice()">Read Device Properties</button>
+				<p id="deviceProperties"></p>
+			</div>  			
+		</ion-content>
+	</ion-view>
+</script>
 	
 	<script id="battery.html" type="text/ng-template">
       <ion-view title="'Battery Status'">
