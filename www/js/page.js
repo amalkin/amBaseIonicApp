@@ -2,45 +2,60 @@ angular.module('ionicApp', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $stateProvider
-    .state('tabs', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "tabs.html"
-    })
-    .state('tabs.home', {
-      url: "/home",
-      views: {
-        'home-tab': {
-          templateUrl: "home.html",
-          controller: 'HomeTabCtrl'
-        }
-      }
-    })
-    .state('tabs.accelerometer', {
-      url: "/accelerometer",
-      views: {
-        'home-tab': {
-          templateUrl: "accelerometer.html"
-        }
-      }
-    })
+	$stateProvider
+	
+		.state('tabs', {
+			url: "/tab",
+			abstract: true,
+			templateUrl: "tabs.html"
+		})
+		
+	.state('tabs.home', {
+		url: "/home",
+		views: {
+			'home-tab': {
+				templateUrl: "home.html",
+				controller: 'HomeTabCtrl'
+			}
+		}
+	})
+	
+	.state('tabs.beacon', {
+		url: "/beacon",
+		views: {
+			'home-tab': {
+				templateUrl: "beacon.html"
+			}
+		}
+	})
+	
+	.state('tabs.accelerometer', {
+		url: "/accelerometer",
+		views: {
+			'home-tab': {
+				templateUrl: "accelerometer.html"
+			}
+		}
+	})
+	
 	.state('tabs.camera', {
-      url: "/camera",
-      views: {
-        'home-tab': {
-          templateUrl: "camera.html"
-        }
-      }
+		url: "/camera",
+		views: {
+			'home-tab': {
+				templateUrl: "camera.html"
+			}
+		}
     })
+	
 	.state('tabs.capture', {
-      url: "/capture",
-      views: {
-        'home-tab': {
-          templateUrl: "capture.html"
-        }
-      }
-    })
+		url: "/capture",
+		views: {
+			'home-tab': {
+				templateUrl: "capture.html"
+			}
+		}
+	})
+	
 	.state('tabs.compass', {
       url: "/compass",
       views: {

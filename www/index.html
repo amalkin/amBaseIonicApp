@@ -77,6 +77,7 @@
 		<ion-content has-header="true" padding="true">
 			<p>Example of ionic framework with phonegap api.</p>		  
 			<div class="list">
+				<a class="item item-icon-left" href="#/tab/beacon"><i class="icon ion-arrow-expand"></i>Beacon</a>
 				<a class="item item-icon-left" href="#/tab/accelerometer"><i class="icon ion-arrow-expand"></i>Accelerometer</a>
 				<a class="item item-icon-left" href="#/tab/camera"><i class="icon ion-camera"></i>Camera</a>
 				<a class="item item-icon-left" href="#/tab/capture"><i class="icon ion-link"></i>Capture Media</a>
@@ -97,6 +98,14 @@
 		</ion-content>
 	</ion-view>
 </script>
+
+<script id="beacon.html" type="text/ng-template">
+	<ion-view title="'Beacon'">
+		<ion-content has-header="true" padding="true"> 
+			<button class="button button-block button-energized" onclick="captureBeacon();">Find Beacon</button>  
+		</ion-content>
+	</ion-view>
+</script>
 	
 <script id="accelerometer.html" type="text/ng-template">
 	<ion-view title="'Accelerometer'">
@@ -113,14 +122,14 @@
 	</ion-view>
 </script>
 
-    <script id="camera.html" type="text/ng-template">
-      <ion-view title="'Camera'">
-        <ion-content has-header="true" padding="true"> 
-		  <button class="button button-block button-energized" onclick="capturePhoto();">Capture Photo</button>
-		  <img style="display:none;width:100%;height:auto;" id="smallImage" src="" />          
-        </ion-content>
-      </ion-view>
-    </script>
+<script id="camera.html" type="text/ng-template">
+	<ion-view title="'Camera'">
+		<ion-content has-header="true" padding="true"> 
+			<button class="button button-block button-energized" onclick="capturePhoto();">Capture Photo</button>
+			<img style="display:none;width:100%;height:auto;" id="smallImage" src="" />          
+		</ion-content>
+	</ion-view>
+</script>
 	
 	<script id="capture.html" type="text/ng-template">
       <ion-view title="'Capture'">
